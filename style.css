@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -10,7 +11,7 @@
     --color-yellow: #F0B429;
 }
 
-body {
+html, body {
     display: flex;
     height: 100vh;
     background-color: var(--color-gray);
@@ -18,7 +19,7 @@ body {
 
 .sidebar {
     width: 240px;
-    height: 100%;
+    height: 100vh;
     color: white;
     background-color: var(--color-primary);
     display: flex;
@@ -47,14 +48,17 @@ body {
     margin-bottom: 40px;
 }
 
+.main-bar {
+    width: 100%;
+}
+
 /* Nav bar */
 
 .navbar {
     display: flex;
     flex-direction: column;
-    padding: 15px 30px;
+    padding: 10px 30px;
     background-color: white;
-    height: 130px;
     width: 100%;
     box-shadow: 0px 5px 5px rgb(0, 0, 0, 0.1);
 }
@@ -133,6 +137,55 @@ body {
     display: flex;
 }
 
+
+/* main section */
+.main {
+    padding: 0px 15px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.main .table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, min(10px, 1fr));
+    gap: 20px;
+}
+
+.main .table .card {
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    border-left: solid #F0B429 5px;
+    box-shadow: 1px 3px 3px rgba(0, 0,0, 0.1);
+}
+
+.main .table .card .icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.main .table .text-super-sm {
+    margin-bottom: 30px;
+    width: 90%;
+}
+
+.main .table .card svg {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.main .title {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
 /* Utility */
 
 .button-primary {
@@ -171,4 +224,15 @@ svg.sm {
 .text-sm {
     font-size: 0.8rem;
     font-weight: normal;
+}
+
+.text-super-sm {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #838383;
+}
+
+.text-semi-lg {
+    font-size: 0.9rem;
+    font-weight: bold;
 }
